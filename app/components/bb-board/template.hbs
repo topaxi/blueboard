@@ -1,0 +1,14 @@
+<table>
+  <caption>{{station.name}}</caption>
+  <thead>
+    <tr>
+      <th>To</th>
+      <th>Departure</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each stationboard as |item|}}
+      {{bb-board-item item=item}}
+    {{/each}}
+  </tbody>
+</table>

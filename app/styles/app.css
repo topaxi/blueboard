@@ -1,0 +1,18 @@
+.blueboards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  background-color: rgb(0, 51, 153);
+  color: #fff;
+}
+
+th, td {
+  padding: 5px;
+}
