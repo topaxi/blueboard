@@ -1,5 +1,7 @@
-import Ember from 'ember'
-import ajax from 'ic-ajax'
+import Ember  from 'ember'
+import moment from 'moment'
+import ajax   from 'ic-ajax'
+
 import LoadingIndicator from 'blueboard/mixins/loading-indicator'
 
 const { $, computed } = Ember
@@ -34,10 +36,11 @@ export default Ember.Route.extend(LoadingIndicator, {
   },
 
   afterModel(model) {
-    let now = Date.now()
+    let now    = Date.now()
+    let filter = item => moment(item.stop.departure).add(item.stop.delay, 'minutes') > now
 
     for (let res of model) {
-      res.stationboard = res.stationboard.filter(i => new Date(i.stop.departure) > now)
+      res.stationboard = res.stationboard.filter(filter)
                                          .slice(0, 10)
     }
   },

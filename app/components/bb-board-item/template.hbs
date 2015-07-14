@@ -1,2 +1,12 @@
-<td>{{item.to}}</td>
-<td>{{ago item.stop.departure}}</td>
+<td>
+  {{item.to}}
+</td>
+<td>
+  {{ago item.stop.departure}}
+  {{#if item.stop.delay}}
+    <br>
+    <span class="warning">
+      {{item.stop.delay}}min delay
+    </span>
+  {{/if}}
+</td>

@@ -47,8 +47,11 @@ th, td {
   border-bottom: 1px solid rgba(192, 224, 255, .5);
 }
 
+.warning {
+  color: red;
+}
+
 .warning::before {
   content: '\26a0';
   cursor: help;
-  color: red;
 }
