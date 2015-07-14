@@ -11,7 +11,9 @@
       <th>Name</th>
       <th>To</th>
       <th width="135">Departure</th>
-      <th>Platform</th>
+      {{#if hasPlatforms}}
+        <th>Platform</th>
+      {{/if}}
     </tr>
   </thead>
   <tbody>

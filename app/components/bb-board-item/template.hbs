@@ -13,6 +13,8 @@
     </span>
   {{/if}}
 </td>
-<td class="tar">
-  {{item.stop.platform}}
-</td>
+{{#if hasPlatforms}}
+  <td class="tar">
+    {{item.stop.platform}}
+  </td>
+{{/if}}
