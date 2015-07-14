@@ -1,5 +1,3 @@
-<button {{action 'refresh'}}>Refresh</button>
-
 <div class="blueboards">
   {{#each model as |res|}}
     {{bb-board station=res.station stationboard=res.stationboard error=res.error}}
