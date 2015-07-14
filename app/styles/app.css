@@ -55,3 +55,7 @@ th, td {
   content: '\26a0';
   cursor: help;
 }
+
+.tar {
+  text-align: center;
+}
