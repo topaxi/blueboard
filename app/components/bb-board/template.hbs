@@ -1,24 +1,22 @@
-<table>
-  <caption>
-    {{station.name}}
+<caption>
+  {{station.name}}
 
-    {{#if error}}
-      <span class="warning" title={{error}}></span>
+  {{#if error}}
+    <span class="warning" title={{error}}></span>
+  {{/if}}
+</caption>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>To</th>
+    <th width="135">Departure</th>
+    {{#if hasPlatforms}}
+      <th>Platform</th>
     {{/if}}
-  </caption>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>To</th>
-      <th width="135">Departure</th>
-      {{#if hasPlatforms}}
-        <th>Platform</th>
-      {{/if}}
-    </tr>
-  </thead>
-  <tbody>
-    {{#each stationboard as |item|}}
-      {{bb-board-item item=item}}
-    {{/each}}
-  </tbody>
-</table>
+  </tr>
+</thead>
+<tbody>
+  {{#each stationboard as |item|}}
+    {{bb-board-item item=item}}
+  {{/each}}
+</tbody>
