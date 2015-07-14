@@ -1,9 +1,10 @@
 import Ember from 'ember'
 import ajax from 'ic-ajax'
+import LoadingIndicator from 'blueboard/mixins/loading-indicator'
 
 const { $, computed } = Ember
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(LoadingIndicator, {
   host: 'http://transport.opendata.ch',
   namespace: 'v1',
   stations: [ 'Nydegg', 'Bern', 'Bümpliz, Post', 'Interlaken West' ],
@@ -28,6 +29,7 @@ export default Ember.Route.extend({
             stationboard: []
           })
         )
+        .finally(() => this.nprogress.inc())
     ))
   },
 
