@@ -2,6 +2,6 @@
 
 <div class="blueboards">
   {{#each model as |res|}}
-    {{bb-board station=res.station stationboard=res.stationboard}}
+    {{bb-board station=res.station stationboard=res.stationboard error=res.error}}
   {{/each}}
 </div>

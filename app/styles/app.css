@@ -6,6 +6,7 @@
 
 table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 tr {
@@ -15,4 +16,12 @@ tr {
 
 th, td {
   padding: 5px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.warning::before {
+  content: '\26a0';
+  cursor: help;
+  color: red;
 }

@@ -1,9 +1,15 @@
 <table>
-  <caption>{{station.name}}</caption>
+  <caption>
+    {{station.name}}
+
+    {{#if error}}
+      <span class="warning" title={{error}}></span>
+    {{/if}}
+  </caption>
   <thead>
     <tr>
       <th>To</th>
-      <th>Departure</th>
+      <th width="135">Departure</th>
     </tr>
   </thead>
   <tbody>
