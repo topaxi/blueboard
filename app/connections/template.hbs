@@ -1,0 +1,24 @@
+<form {{action 'search' on='submit'}}>
+  <input type="text" value={{from}} oninput={{action 'setFrom' value='target.value'}}>
+  <input type="text" value={{to}} oninput={{action 'setTo' value='target.value'}}>
+
+  <div>
+    <label>
+      <input type="radio" name="isArrivalTime" value="0" onchange={{action 'setArrival' value='target.value'}} checked={{is-eq isArrivalTime '0'}}>
+      Departure
+    </label>
+    <label>
+      <input type="radio" name="isArrivalTime" value="1" onchange={{action 'setArrival' value='target.value'}} checked={{is-eq isArrivalTime '1'}}>
+      Arrival
+    </label>
+  </div>
+  <button>Search</button>
+</form>
+
+<ul>
+{{#each model.connections as |connection|}}
+  <li>
+    {{connection}}
+  </li>
+{{/each}}
+</ul>

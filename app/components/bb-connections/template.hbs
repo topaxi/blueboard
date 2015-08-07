@@ -1,0 +1,49 @@
+<caption>
+  {{from}} to {{to}}
+
+  {{#if error}}
+    <span class="warning" title={{error}}></span>
+  {{/if}}
+</caption>
+<thead>
+  <tr>
+    <th></th>
+    <th>From</th>
+    <th>To</th>
+    <th width="135">Departure</th>
+    {{#if hasTransfers}}
+      <th>Trans</th>
+    {{/if}}
+    {{#if hasPlatforms}}
+      <th>Plat</th>
+    {{/if}}
+  </tr>
+</thead>
+<tbody>
+  {{#each connections as |connection|}}
+    <tr>
+      <td>{{connection.products}}</td>
+      <td>{{connection.from.station.name}}</td>
+      <td>{{connection.to.station.name}}</td>
+      <td>
+        {{ago connection.from.departure}}
+        {{#if connection.from.delay}}
+          <br>
+          <span class="warning">
+            {{connection.from.delay}}min delay
+          </span>
+        {{/if}}
+      </td>
+      {{#if hasTransfers}}
+        <td class="tar">
+          {{connection.transfers}}
+        </td>
+      {{/if}}
+      {{#if hasPlatforms}}
+        <td class="tar">
+          {{connection.from.platform}}
+        </td>
+      {{/if}}
+    </tr>
+  {{/each}}
+</tbody>
